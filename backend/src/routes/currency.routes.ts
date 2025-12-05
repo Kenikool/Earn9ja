@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { currencyController } from "../controllers/currency.controller";
-import { authenticate } from "../middleware/auth.middleware";
-import { validationMiddleware } from "../middleware/validation.middleware";
-import { currencyValidators } from "../validators/currency.validator";
+import { currencyController } from "../controllers/currency.controller.js";
+import { authenticate } from "../middleware/auth.middleware.js";
+import { validationMiddleware } from "../middleware/validation.middleware.js";
+import { currencyValidators } from "../validators/currency.validator.js";
 
 const router = Router();
 
