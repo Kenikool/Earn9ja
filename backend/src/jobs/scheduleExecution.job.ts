@@ -1,5 +1,5 @@
 import cron from "node-cron";
-import { ScheduleService } from "../services/ScheduleService";
+import { ScheduleService } from "../services/ScheduleService.js";
 
 /**
  * Cron job to execute pending schedules

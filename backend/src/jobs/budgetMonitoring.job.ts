@@ -1,6 +1,6 @@
 import cron from "node-cron";
-import { TaskBudget } from "../models/TaskBudget";
-import { Task } from "../models/Task";
+import { TaskBudget } from "../models/TaskBudget.js";
+import { Task } from "../models/Task.js";
 import notificationService from "../services/NotificationService.js";
 
 /**

@@ -1,4 +1,4 @@
-import { DraftService } from "../services/DraftService";
+import { DraftService } from "../services/DraftService.js";
 
 /**
  * Cron job to cleanup expired drafts

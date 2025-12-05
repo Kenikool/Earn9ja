@@ -1,6 +1,6 @@
 import cron from "node-cron";
-import { currencyService } from "../services/CurrencyConversionService";
-import { logger } from "../config/logger";
+import { currencyService } from "../services/CurrencyConversionService.js";
+import { logger } from "../config/logger.js";
 
 /**
  * Background job to update exchange rates every 6 hours
