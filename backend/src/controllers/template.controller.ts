@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { TemplateService } from "../services/TemplateService";
+import { TemplateService } from "../services/TemplateService.js";
 
 export class TemplateController {
   /**

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { TargetingService } from "../services/TargetingService";
+import { TargetingService } from "../services/TargetingService.js";
 
 export class TargetingController {
   /**
