@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { SupportController } from "../controllers/support.controller";
-import { authenticate, requireRole } from "../middleware/auth.middleware";
+import { SupportController } from "../controllers/support.controller.js";
+import { authenticate, requireRole } from "../middleware/auth.middleware.js";
 import { body, param, query } from "express-validator";
 
 const router = Router();
