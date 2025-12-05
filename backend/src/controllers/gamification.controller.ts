@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { DailyBonusService } from "../services/DailyBonusService";
-import { SpinWheelService } from "../services/SpinWheelService";
-import { ChallengeService } from "../services/ChallengeService";
-import { LeaderboardService } from "../services/LeaderboardService";
-import { AchievementService } from "../services/AchievementService";
-import { ReputationService } from "../services/ReputationService";
+import { DailyBonusService } from "../services/DailyBonusService.js";
+import { SpinWheelService } from "../services/SpinWheelService.js";
+import { ChallengeService } from "../services/ChallengeService.js";
+import { LeaderboardService } from "../services/LeaderboardService.js";
+import { AchievementService } from "../services/AchievementService.js";
+import { ReputationService } from "../services/ReputationService.js";
 
 class GamificationController {
   // Daily Bonus
