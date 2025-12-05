@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DraftService } from "../services/DraftService";
+import { DraftService } from "../services/DraftService.js";
 
 export class DraftController {
   /**
