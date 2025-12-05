@@ -292,12 +292,17 @@ JWT_REFRESH_SECRET=<generate-with-openssl-rand-base64-32>
 JWT_EXPIRES_IN=24h
 JWT_REFRESH_EXPIRES_IN=7d
 
-# Email
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=noreply@earn9ja.site
-EMAIL_PASSWORD=<app-specific-password>
+# Email (Resend - Recommended)
+RESEND_API_KEY=re_<your-production-api-key>
 EMAIL_FROM=Earn9ja <noreply@earn9ja.site>
+
+# Alternative: Email via SMTP (if using Resend SMTP)
+# EMAIL_HOST=smtp.resend.com
+# EMAIL_PORT=465
+# EMAIL_SECURE=true
+# EMAIL_USER=resend
+# EMAIL_PASSWORD=re_<your-api-key>
+# EMAIL_FROM=Earn9ja <noreply@earn9ja.site>
 
 # SMS
 TWILIO_ACCOUNT_SID=<production-sid>

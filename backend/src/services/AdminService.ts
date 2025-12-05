@@ -5,17 +5,7 @@ import { Wallet } from "../models/Wallet.js";
 import { TaskSubmission } from "../models/TaskSubmission.js";
 import { Withdrawal } from "../models/Withdrawal.js";
 import { Dispute } from "../models/Dispute.js";
-import { string } from "joi";
 import mongoose from "mongoose";
-import { string } from "joi";
-import { string } from "joi";
-import { string } from "joi";
-import { string } from "joi";
-import { string } from "joi";
-import { number } from "joi";
-import { number } from "joi";
-import { string } from "joi";
-import { string } from "joi";
 
 class AdminService {
   // User Management

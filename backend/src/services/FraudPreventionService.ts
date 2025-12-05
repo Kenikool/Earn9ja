@@ -345,7 +345,7 @@ export class FraudPreventionService {
   async flagUserForReview(userId: string, reason: string): Promise<void> {
     try {
       const key = `fraud:flagged:${userId}`;
-      await redis.setEx(
+      await redis.setex(
         key,
         86400 * 7, // 7 days
         JSON.stringify({
@@ -431,7 +431,7 @@ export class FraudPreventionService {
       ipData.count++;
       ipData.lastSeen = new Date().toISOString();
 
-      await redis.setEx(key, 86400, JSON.stringify(ipData)); // 24 hours
+      await redis.setex(key, 86400, JSON.stringify(ipData)); // 24 hours
 
       // Check for suspicious activity
       if (ipData.users.length > 5) {

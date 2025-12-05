@@ -11,6 +11,7 @@ interface Alert {
   amount?: number;
   date?: Date;
   metadata?: any;
+  data?: any;
 }
 
 export class AlertService {

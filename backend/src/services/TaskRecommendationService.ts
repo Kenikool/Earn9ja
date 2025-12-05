@@ -2,7 +2,7 @@ import { OfferWallTransaction } from "../models/OfferWallTransaction.js";
 import { ExternalProvider } from "../models/ExternalProvider.js";
 import { User } from "../models/User.js";
 import { logger } from "../config/logger.js";
-import { redis } from "../config/redis.js";
+import { redis } from "../config/redis-wrapper.js";
 
 interface UserPreferences {
   userId: string;

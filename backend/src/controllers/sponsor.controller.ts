@@ -286,29 +286,25 @@ export class SponsorController {
 
       // Task performance breakdown
       const taskPerformance = {
-        pending: tasks.filter((t) => t.status === "pending").length,
-        inProgress: tasks.filter((t) => t.status === "in_progress").length,
+        draft: tasks.filter((t) => t.status === "draft").length,
+        active: tasks.filter((t) => t.status === "active").length,
         completed: tasks.filter((t) => t.status === "completed").length,
         rejected: submissions.filter((s) => s.status === "rejected").length,
       };
 
       // Worker engagement
       const uniqueWorkers = new Set(
-        submissions.map((s) => s.userId.toString())
+        submissions.map((s) => s.workerId.toString())
       );
       const approvedSubmissions = submissions.filter(
         (s) => s.status === "approved"
       );
-      const averageRating =
-        approvedSubmissions.length > 0
-          ? approvedSubmissions.reduce((sum, s) => sum + (s.rating || 0), 0) /
-            approvedSubmissions.length
-          : 0;
+      const averageRating = 0; // Rating system not implemented yet
 
       // Count repeat workers (workers who completed more than one task)
       const workerTaskCounts = new Map<string, number>();
       approvedSubmissions.forEach((s) => {
-        const workerId = s.userId.toString();
+        const workerId = s.workerId.toString();
         workerTaskCounts.set(
           workerId,
           (workerTaskCounts.get(workerId) || 0) + 1

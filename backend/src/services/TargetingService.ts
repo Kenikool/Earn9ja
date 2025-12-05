@@ -213,18 +213,15 @@ export class TargetingService {
     if (targeting.geographic) {
       const { countries, states, cities } = targeting.geographic;
 
-      if (
-        countries &&
-        countries.length > 0 &&
-        !countries.includes(user.profile?.country || "")
-      ) {
-        return false;
-      }
+      // Note: country targeting not implemented in user profile yet
+      // if (countries && countries.length > 0) {
+      //   return false;
+      // }
 
       if (
         states &&
         states.length > 0 &&
-        !states.includes(user.profile?.state || "")
+        !states.includes(user.profile?.location?.state || "")
       ) {
         return false;
       }
@@ -232,7 +229,7 @@ export class TargetingService {
       if (
         cities &&
         cities.length > 0 &&
-        !cities.includes(user.profile?.city || "")
+        !cities.includes(user.profile?.location?.city || "")
       ) {
         return false;
       }
@@ -268,14 +265,14 @@ export class TargetingService {
 
       if (
         minCompletionRate !== undefined &&
-        (user.stats?.completionRate || 0) < minCompletionRate
+        (user.reputation?.approvalRate || 0) < minCompletionRate
       ) {
         return false;
       }
 
       if (
         minTasksCompleted !== undefined &&
-        (user.stats?.tasksCompleted || 0) < minTasksCompleted
+        (user.reputation?.totalTasksCompleted || 0) < minTasksCompleted
       ) {
         return false;
       }

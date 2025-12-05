@@ -45,14 +45,14 @@ export class SocketService {
         const decoded = jwt.verify(token, process.env.JWT_SECRET!) as any;
 
         // Get user from database
-        const user = await User.findByPk(decoded.userId);
+        const user = await User.findById(decoded.userId || decoded.id);
 
         if (!user) {
           return next(new Error("Authentication error: User not found"));
         }
 
         // Attach user info to socket
-        socket.userId = user.id;
+        socket.userId = user._id.toString();
         socket.user = user;
 
         next();

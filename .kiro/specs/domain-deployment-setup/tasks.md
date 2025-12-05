@@ -239,17 +239,18 @@ This implementation plan provides step-by-step tasks for deploying the Earn9ja p
 
 - [ ] 8. Configure production email and SMS services
 
-  - [ ] 8.1 Set up production email service
+  - [ ] 8.1 Set up production email service with Resend
 
-    - Create production Gmail account: noreply@earn9ja.site (or use existing)
-    - Enable 2-factor authentication on Gmail account
-    - Generate app-specific password for SMTP
-    - Add EMAIL_HOST=smtp.gmail.com to Render
-    - Add EMAIL_PORT=587 to Render
-    - Add EMAIL_USER=noreply@earn9ja.site to Render
-    - Add EMAIL_PASSWORD=<app-password> to Render
+    - Sign up for Resend at https://resend.com (free tier: 3,000 emails/month)
+    - Create API key in Resend dashboard (name: Earn9ja Production)
+    - Copy the API key (starts with re\_...) - save it securely
+    - Add RESEND_API_KEY to Render environment variables
     - Add EMAIL_FROM=Earn9ja <noreply@earn9ja.site> to Render
-    - Redeploy backend service
+    - (Optional) Verify domain earn9ja.site in Resend for better deliverability
+    - (Optional) Add DNS records in Hostinger for domain verification
+    - Install Resend package in backend: npm install resend
+    - Update email service code to use Resend API (see EMAIL_SERVICE_SETUP.md)
+    - Redeploy backend service on Render
     - Test email sending with sample verification email
     - _Requirements: 8.1, 8.3, 8.4_
 

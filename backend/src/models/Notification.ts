@@ -29,7 +29,9 @@ export interface INotification extends Document {
     | "daily_bonus"
     | "daily_bonus_available"
     | "new_task_available"
-    | "system_announcement";
+    | "system_announcement"
+    | "budget_alert"
+    | "support";
   data?: Record<string, any>;
   read: boolean;
   actionUrl?: string;
@@ -84,6 +86,8 @@ const notificationSchema = new Schema<INotification>(
         "daily_bonus_available",
         "new_task_available",
         "system_announcement",
+        "budget_alert",
+        "support",
       ],
       index: true,
     },

@@ -183,7 +183,7 @@ export class BulkTaskService {
           }
 
           // Create task using TaskService
-          const task = await TaskService.createTask(
+          const task = await taskService.createTask(
             {
               title: taskData.title,
               description: taskData.description,
